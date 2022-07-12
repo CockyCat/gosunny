@@ -19,8 +19,12 @@ COPY ./service/hs/api/etc /app/etc
 
 RUN go build -ldflags="-s -w" -o /app/hs service/hs/api/hs.go
 
+#运行时环境
+#不允许进入容器 用scratch
+#FROM scratch
 
-FROM scratch
+#允许进入容器
+FROM alpine
 
 COPY --from=builder /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/ca-certificates.crt
 COPY --from=builder /usr/share/zoneinfo/Asia/Shanghai /usr/share/zoneinfo/Asia/Shanghai
@@ -33,4 +37,4 @@ COPY --from=builder /app/etc /app/etc
 # 声明服务端口
 EXPOSE 8881
 
-CMD ["./hs", "-f", "etc/hs_docker.yaml"]
+CMD ["./hs", "-f", "etc/hs_docker_test.yaml"]
