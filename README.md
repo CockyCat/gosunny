@@ -58,35 +58,36 @@ goctl api go -api xxxx.api -dir .
 
 
 
-##Docker部署
+## Docker部署
+
 以下是在MacOS构建Linux服务器的镜像用例
 
 如果是在Mac M1芯片下构建镜像的话，而服务器是Linux的话，记得指定CPU架构为amd64，否则会报：
 [8] System error: exec format error
 
 
-###构建docker镜像
+### 构建docker镜像
 ```
 docker build -t xxx_service_api:v1.1.4 --platform=linux/amd64 . 
 ```
 
-###打包MacOS上的本地Docker镜像
+### 打包MacOS上的本地Docker镜像
 ```
 docker save -o xxx_api_servicev1.1.4.tar xxx_service_api:v1.1.4
 ```
-###上传镜像至服务器
+### 上传镜像至服务器
 
 
 
-###服务器导入Docker镜像
+### 服务器导入Docker镜像
 ```
 sudo docker load -i xxx_api_service.tar
 ```
-###确定是否导入成功
+### 确定是否导入成功
 ```
 sudo docker images
 ```
-###启动docker服务
+### 启动docker服务
 ```
 docker run -p 8881:8881 xxx_service_api:v1.1.4
 ```
