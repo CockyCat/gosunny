@@ -92,3 +92,20 @@ sudo docker images
 docker run -p 8881:8881 xxx_service_api:v1.1.4
 ```
 
+
+## Docker部署Etcd
+
+### 拉取etcd镜像
+```
+docker pull bitnami/etcd:latest
+```
+
+### 启动etcd
+```
+#docker run --env ALLOW_NONE_AUTHENTICATION=yes -p 2379:2379 bitnami/etcd:latest
+
+docker run -it --rm \
+    --network app-tier \
+    --env ALLOW_NONE_AUTHENTICATION=yes \
+    bitnami/etcd:latest etcdctl --endpoints http://etcd-server:2379 put /message Hello
+```
