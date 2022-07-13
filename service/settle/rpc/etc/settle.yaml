@@ -1,0 +1,8 @@
+Name: settle.rpc
+ListenOn: 127.0.0.1:6000
+Etcd:
+  Hosts:
+  - 127.0.0.1:2379
+  Key: settle.rpc
+Mysql:
+  DataSource: root:@tcp(127.0.0.1:3306)/ettle?charset=utf8mb4&parseTime=true&loc=Asia%2FShanghai

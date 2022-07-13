@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package settle;
+  
+// protoc-gen-go 版本大于1.4.0, proto文件需要加上go_package,否则无法生成
+option go_package = "./settle";
+
+message SettleCommonRequest {
+}
+
+message SettleTypeSummaryRequest {
+}
+  
+message SettleTypeSummaryResponse {
+    // 结算类型名称
+    string typename = 1;
+    // 结算总额
+    string totalmoney = 2;
+}
+
+message SettleTypeSummaryListResponse {
+  repeated SettleTypeSummaryResponse list = 1;
+}
+
+
+message SettleSumResponse {
+    // 所有账单结算总额
+    string totalmoney = 1;
+}
+
+
+service SettleRpcService {
+    rpc GetSummaryBySettleType(SettleTypeSummaryRequest) returns(SettleTypeSummaryListResponse);
+
+    rpc GetSum(SettleCommonRequest) returns (SettleSumResponse);
+
+}
