@@ -1,0 +1,66 @@
+type (
+	ProvinceCustomReq {
+		Proname string `path:"proname"`
+	}
+
+	ProvinceCustomReply {
+		Customname string `json:"customname"`
+		Count      string `json:"count"`
+	}
+
+	CommonReq {
+		Ddcode string `path:"ddcode"`
+	}
+
+	CustomSummaryReply {
+		Factoryname                string  `json:"factoryname"`
+		Top100Sum                  float64 `json:"top100Sum"`
+		CurrentMonthNewCustomCount float64 `json:"currentMonthNewCustomCount"`
+		CurrentYearCustomCount     float64 `json:"currentYearCustomCount"`
+	}
+
+	GoodsqtySummaryReply {
+		CustomData   float64 `json:"customData"`
+		FactoryData  float64 `json:"factoryData"`
+		LevelOneData float64 `json:"levelOneData"`
+	}
+
+	HsInfoReq {
+		Id int64 `path:"id"`
+	}
+
+	HsInfoReply {
+		Id          int64  `json:"id"`
+		Dataid      int64  `json:"dataid"`
+		Factoryname string `json:"factoryname"`
+	}
+
+	SettleSummaryReq {
+	}
+	SettleSummaryReply {
+		SettleSummaryByType []*SettleSummaryByTypeReply `json:"settlesummarybytype"`
+		SettleSum           SettleSumReply              `json:"settlesum"`
+	}
+
+	SettleSummaryByTypeReply {
+		Typename   string `json:"typename"`
+		Totalmoney string `json:"totalmoney"`
+	}
+
+	SettleSumReply {
+		Totalmoney string `json:"totalmoney"`
+	}
+)
+service analysis {
+	@handler getcustombyprovince
+	get /api/analysis/getcustombyprovince/:proname (ProvinceCustomReq) returns (ProvinceCustomReply)
+	
+	@handler customsummary
+	get /api/analysis/customsummary/:ddcode (CommonReq) returns (CustomSummaryReply)
+	
+	@handler goodsqtysummary
+	get /api/analysis/goodsqtysummary/:ddcode (CommonReq) returns (GoodsqtySummaryReply)
+	
+	@handler settlesummary
+	get /analysis/settle/summary (SettleSummaryReq) returns (SettleSummaryReply)
+}

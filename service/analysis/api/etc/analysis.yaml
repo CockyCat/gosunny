@@ -1,0 +1,13 @@
+Name: analysis
+Host: 0.0.0.0
+Port: 8888
+HsRpc:
+  Etcd:
+    Hosts:
+    - 127.0.0.1:2379
+    Key: hs.rpc
+SettleRpc:
+  Etcd:
+    Hosts:
+    - 127.0.0.1:2379
+    Key: settle.rpc
