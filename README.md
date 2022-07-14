@@ -3,8 +3,7 @@
 Go zero是一款非常好用的微服务框架，但遗憾的是go zero自带的sqlx sqlc非常难用，所以结合自己的使用习惯，集成了gorm进来，同时封装了一层DAO层用来做一些基础DB操作
 
 ## 架构图
-
-![图片](https://github.com/CockyCat/gozero_gorm_best-practices/blob/main/resource/ach.png)
+![](https://s3.bmp.ovh/imgs/2022/07/14/5c9d8bdb23ab787d.jpg)
 
 
 ## 手动集成gORM
