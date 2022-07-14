@@ -4,7 +4,8 @@ Go zero是一款非常好用的微服务框架，但遗憾的是go zero自带的
 
 ## 架构图
 
-![图片](https://github.com/CockyCat/gozero_gorm_best-practices/blob/main/resource/ach.png)
+
+![图片](resource/ach.png)
 
 
 ## 手动集成gORM
