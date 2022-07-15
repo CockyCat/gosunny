@@ -1,4 +1,4 @@
-# gozero+gorm+grpc Micservice Best Practices - To build a middle-platform 
+# gozero+gorm+grpc Microservice Best Practices - To build a middle-platform 
 # gozero+gORM+grpc+Vue 微服务最佳实践 构建企业数据中台
 本案例主要使用Go微服务技术栈实现一个企业数据中台，采用前后端分离的方式进行开发。
 前端技术栈：Vue
@@ -11,6 +11,9 @@ Go zero是一款非常好用的微服务框架，但遗憾的是go zero自带的
 
 ## 架构图
 ![](https://s3.bmp.ovh/imgs/2022/07/14/5c9d8bdb23ab787d.jpg)
+
+
+## API网关
 
 
 ## 手动集成gORM
