@@ -1,5 +1,12 @@
 # gozero+gorm+grpc Micservice Best Practices - To build a middle-platform 
 # gozero+gORM+grpc+Vue 微服务最佳实践 构建企业数据中台
+本案例主要使用Go微服务技术栈实现一个企业数据中台，采用前后端分离的方式进行开发。
+前端技术栈：Vue
+后端技术栈：
+Go zero
+gORM
+gRPC
+
 Go zero是一款非常好用的微服务框架，但遗憾的是go zero自带的sqlx sqlc非常难用，所以结合自己的使用习惯，集成了gorm进来，同时封装了一层DAO层用来做一些基础DB操作
 
 ## 架构图
