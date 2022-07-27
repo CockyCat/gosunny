@@ -1,5 +1,5 @@
-# GoSunny - Best Practices Of Microservice Base on Golang To build a middle-platform 
-# GoSunny是基于Golang的微服务最佳实践构建企业数据中台的工程化实践方案
+# GoSunny - Best Practices Of Microservice Base on Golang(Gozero, gORM, gRPC, Asynq) To build a middle-platform 
+# GoSunny是基于Golang技术栈的微服务工程化方案，本案例用于构建企业数据中台
 本案例主要使用Go微服务技术栈实现一个企业数据中台，采用前后端分离的方式进行开发。
 
 ### 前端技术栈：
@@ -10,7 +10,7 @@
 + Go zero
 + gORM
 + gRPC
-+ asyncq
++ asynq
 
 
 ## 架构图 
@@ -18,6 +18,10 @@
 
 
 ## API网关 - API Gateway
+### 基于Nginx+Lua方案的技术选型：
++ APISIX
++ KONG
+
 
 
 ## 分布式任务作业 - Job
