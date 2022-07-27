@@ -20,7 +20,8 @@
 ## API网关 - API Gateway
 
 
-## 作业 - Job
+## 分布式任务作业 - Job
+采用Asynq + Redis
 
 
 ## 手动集成gORM
