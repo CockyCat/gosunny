@@ -1,0 +1,15 @@
+#macro service.
+Name: app1_cmd
+Host: 0.0.0.0
+Port: 3002
+Mode: dev
+Timeout: 500000     #覆盖rest.RestConf { timeout }的值
+
+
+App1RpcConf:
+  Endpoints:
+    - 127.0.0.1:6000
+  NonBlock: true
+
+XXXApiConf: 
+  ApiKey: 8c02c
